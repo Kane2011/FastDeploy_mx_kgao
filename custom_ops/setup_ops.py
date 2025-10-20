@@ -604,7 +604,9 @@ elif paddle.device.is_compiled_with_custom_device("metax_gpu"):
         "metax_ops/moe_dispatch.cu",
         "metax_ops/moe_ffn.cu",
         "metax_ops/moe_reduce.cu",
-        "metax_ops/fused_moe.cu",
+        "metax_ops/fused_moe.cu", 
+	"gpu_ops/text_image_index_out.cu",
+        "gpu_ops/text_image_gather_scatter.cu",
     ]
 
     sources += find_end_files("gpu_ops/speculate_decoding", ".cu")
