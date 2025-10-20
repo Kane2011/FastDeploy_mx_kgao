@@ -175,7 +175,7 @@ class VisionFlashAttention2(nn.Layer):
                 mp_group=fleet.get_hybrid_communicate_group().get_model_parallel_group(),
                 weight_attr=None,
                 has_bias=True,
-                fuse_matmul_bias=False if current_platform.is_iluvatar() else True,
+                fuse_matmul_bias=False if current_platform.is_maca() else True,
                 gather_output=False,
             )
             self.proj = RowParallelLinear(

@@ -173,7 +173,7 @@ class VariableResolutionResamplerModel(nn.Layer):
                         self.spatial_dim,
                         input_is_parallel=True,
                         has_bias=True,
-                        fuse_matmul_bias=False if current_platform.is_iluvatar() else True,
+                        fuse_matmul_bias=False if current_platform.is_maca() else True,
                     )
                     if self.tensor_parallel_degree > 1
                     else nn.Linear(self.spatial_dim, self.spatial_dim)
